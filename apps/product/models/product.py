@@ -22,7 +22,7 @@ class ProductVariant(BaseModel):
     price = models.DecimalField(max_digits=21, decimal_places=2)
     images = models.ManyToManyField(File)
     characteristics = models.TextField()
-    attribute_fields = models.ForeignKey('AttributeValue')
+    attribute_fields = models.ManyToManyField('AttributeValue')
     is_available = models.BooleanField(default=True)
     quantity = models.IntegerField(default=0)
 
